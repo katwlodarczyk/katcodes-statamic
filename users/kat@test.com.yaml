@@ -11,3 +11,11 @@ preferences:
       after_save: create_another
     blog:
       after_save: continue_editing
+      columns:
+        - featured_image
+        - title
+        - slug
+        - author
+        - date
+        - categories
+        - tags

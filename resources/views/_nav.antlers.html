@@ -3,19 +3,19 @@
         <div class="flex flex-1 justify-center items-center space-x-8">
             <ul class="flex items-center space-x-8 font-semibold">
                 {{ nav:collection:pages include_home="true" }}
-                <li><a href="{{ url }}" class="text-lg py-4 block uppercase text-gray-400 hover:text-white {{ is_current || is_parent ?= 'text-white' }}">{{ title
+                <li><a href="{{ url }}" class="text-base py-4 block uppercase text-gray-400 hover:text-white {{ is_current || is_parent ?= 'text-white' }}">{{ title
                         }}</a></li>
                 {{ /nav:collection:pages }}
             </ul>
             <ul class="flex items-center space-x-8 font-semibold">
                 {{ categories }}
-                    <li><a href="{{ url }}" class="text-lg py-4 block uppercase text-gray-400 hover:text-white {{ is_current || is_parent ?= 'text-white' }}">{{ title }}</a></li>
+                    <li><a href="{{ url }}" class="text-base py-4 block uppercase text-gray-400 hover:text-white {{ is_current || is_parent ?= 'text-white' }}">{{ title }}</a></li>
                 {{/categories}}
             </ul>
-            <form action="/search">
+            {{# <form action="/search">
                 <input type="search" name="q" placeholder="Search" value="{{ get:q }}" autofocus
                     class="border-2 border-black outline-none px-2 h-8 rounded-none placeholder-black font-bold ml-4">
-            </form>
+            </form> #}}
         </div>
     </div>
 </nav>

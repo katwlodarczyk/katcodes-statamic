@@ -1,0 +1,18 @@
+{{ entries:blog group_by_date="F Y" }}
+    {{ if grouped_date }}
+        {{ if !first }}
+        </ul>
+        {{ endif }}
+
+        <h3>{{ grouped_date }}</h3>
+        <ul>
+            {{ endif }}
+
+            <li>
+                <a href="{{ url }}">{{ title }}</a>
+            </li>
+
+            {{ if last }}
+        </ul>
+    {{ endif }}
+{{ /entries:blog }}

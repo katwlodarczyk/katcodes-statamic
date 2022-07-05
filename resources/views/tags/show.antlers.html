@@ -1,0 +1,10 @@
+<div class="max-w-4xl mx-auto mt-12">
+    <h1 class="text-8xl font-black text-center">{{ title}}</h1>
+    {{ entries paginate="1" as="posts"}}
+    <div class="grid grid-flow-col gird-cols-2 gap-8 my-16">
+        {{ posts }}
+        {{ partial:blog/card }}
+        {{ /posts }}
+    </div>
+    {{ /entries }}
+</div>

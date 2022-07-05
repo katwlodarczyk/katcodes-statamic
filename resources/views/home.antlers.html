@@ -9,8 +9,6 @@
     <div class="relative flex items-center justify-between space-x-8 mx-auto my-8">
         {{ if next_page }}
             <a class="absolute left-0" href="{{next_page}}">← Previous</a>
-        {{ else }}
-            <a class="disabled absolute left-0 text-gray-400">← Previous</a>
         {{/if}}
         {{ if prev_page}}
             <a class="absolute right-0" href="{{prev_page}}">Next →</a>

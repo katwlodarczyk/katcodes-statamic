@@ -1,0 +1,16 @@
+<div class="max-w-2xl mx-auto mt-24">
+    <h1 class="w-max mx-auto text-2xl uppercase tracking-wide text-gray-500 text-center pb-2 border-b-2 border-gray-200">
+        Category: {{ title}}
+    </h1>
+    {{ entries as="posts"}}
+        {{ if posts }}
+            <div class="my-16">
+                {{ posts }}
+                    {{ partial:blog/card }}
+                {{ /posts }}
+            </div>
+        {{ else }}
+            <h2 class="text-center text-2xl pt-4">Sorry, no posts in this category.</h2>
+        {{ /if }}
+    {{ /entries }}
+</div>

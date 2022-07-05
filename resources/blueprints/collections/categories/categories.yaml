@@ -1,0 +1,33 @@
+sections:
+  main:
+    display: Main
+    fields:
+      -
+        handle: title
+        field:
+          type: text
+          required: true
+          validate:
+            - required
+      -
+        handle: content
+        field:
+          type: markdown
+          localizable: true
+  sidebar:
+    display: Sidebar
+    fields:
+      -
+        handle: slug
+        field:
+          type: slug
+          localizable: true
+      -
+        handle: categories
+        field:
+          type: terms
+          taxonomies:
+            - categories
+          display: Categories
+          mode: select
+title: Categories
