@@ -1,0 +1,10 @@
+title: Categories
+template: home
+layout: layout
+taxonomies:
+  - categories
+revisions: false
+sort_dir: asc
+date_behavior:
+  past: public
+  future: private

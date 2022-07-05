@@ -1,0 +1,48 @@
+sections:
+  main:
+    display: Main
+    fields:
+      -
+        handle: twitter
+        field:
+          display: Twitter
+          type: link
+          icon: link
+          listable: hidden
+          instructions_position: above
+          read_only: false
+          validate:
+            - required
+      -
+        handle: github
+        field:
+          display: GitHub
+          type: link
+          icon: link
+          listable: hidden
+          instructions_position: above
+          read_only: false
+          validate:
+            - required
+      -
+        handle: behance
+        field:
+          display: Behance
+          type: link
+          icon: link
+          listable: hidden
+          instructions_position: above
+          read_only: false
+          validate:
+            - required
+      -
+        handle: youtube
+        field:
+          display: YouTube
+          type: link
+          icon: link
+          listable: hidden
+          instructions_position: above
+          read_only: false
+          validate:
+            - required

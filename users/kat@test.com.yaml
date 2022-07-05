@@ -1,0 +1,13 @@
+name: kat
+super: true
+id: 5f7fcf24-6e6e-4a0f-bd64-02be26bbe4c6
+password_hash: $2y$10$j9IJIXIjGuSV4OxsghaZTeLnxV6LqEkASjps5p00qiuA8AKlZYumS
+preferences:
+  taxonomies:
+    categories:
+      after_save: create_another
+  collections:
+    categories:
+      after_save: create_another
+    blog:
+      after_save: continue_editing
