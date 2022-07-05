@@ -1,0 +1,27 @@
+title: 'About me'
+data:
+  image: image-9.webp
+  content:
+    -
+      type: paragraph
+      content:
+        -
+          type: text
+          text: 'Hello, I’m Kat.'
+    -
+      type: paragraph
+      content:
+        -
+          type: text
+          text: 'Web developer with 1.5 years of experience and (Bsc) Digital Design and Web Development student on Solent University. Originally from Poland but living in UK since 2013.'
+        -
+          type: hard_break
+        -
+          type: text
+          text: 'Multi-tasker and a busy bee. Photography lover with a need to create pieces that are both beautiful and useful.'
+    -
+      type: paragraph
+      content:
+        -
+          type: text
+          text: 'This website is all about growth. Hop on, because it’s the journey that matters!'

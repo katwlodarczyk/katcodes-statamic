@@ -1,31 +1,76 @@
 <div class="max-w-2xl mx-auto">
-    <h1 class="text-6xl font-black leading-none text-left">{{ title }}</h1>
-    <div class="flex space-x-3 mt-8 text-xs font-semibold tracking-widest uppercase">
-        {{ tags }}
-        <a href="{{url}}" class="bg-black hover:bg-red-800 text-white px-3 py-px">{{ title }}</a>
-        {{ /tags }}
-    </div>
-    <img src="{{featured_image}}" alt="{{featured_image:alt}}" class="mt-8">
-    <div class="flex items-center my-16">
-        <img src="{{author:avatar}}" alt="" class="h-12 w-12 rounded-full">
-        <div class="leading-tight ml-3">
-            <p class="font-bold">{{author:name}}</p>
-            <p class="text-sm text-gray-600"> {{ date }}</p>
-        </div>
-    </div>
-    <article class="space-y-12 mb-12">
+    <img src="{{featured_image}}" alt="{{featured_image:alt}}" class="mt-24 rounded">
+    <h1 class="text-6xl font-black leading-none text-left my-8">{{ title }}</h1>
+    <p class="text-sm text-gray-600"> {{ date }}</p>
+    <article class="space-y-12 mt-12 mb-8 prose">
         {{ content }}
     </article>
-    <aside class="border-t-8 border-black my-24 py-8 max-w-2xl mx-auto">
-        <h3 class="text-2xl font-black">Related articles</h3>
-        <ul class="text-lg font-bold spave-y-2 my-8">
+    
+    <aside class="border-t-2 border-black py-8 max-w-2xl mx-auto">
+        <h3 class="text-xl font-semibold">Related posts</h3>
+        <ul class="space-y-2">
             {{ if related_posts }}
-            <div class="grid grid-flow-row grid-cols-2 gap-8 my-16">
+            <div class="grid grid-flow-row grid-cols-3 gap-8">
                 {{ related_posts }}
-                {{ partial:blog/card hide_image="true"}}
+                {{ partial:blog/card hide_excerpt="true" hide_border="true"}}
                 {{ /related_posts }}
             </div>
             {{ /if }}
         </ul>
     </aside>
+    <aside class="border-t-2 border-black py-8 max-w-2xl mx-auto">
+        <div class="flex space-x-2 items-center text-xs font-semibold tracking-widest uppercase">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"
+                stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round"
+                    d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-6l-2-2H5a2 2 0 00-2 2z" />
+            </svg>
+            {{ categories }}
+            <a href="{{url}}" class="hover:underline text-gray-900 px-2 py-px">
+                {{ title }}
+            </a>
+            {{ /categories }}
+        </div>
+        <div class="flex items-center space-x-2 mt-8 text-xs font-semibold tracking-widest uppercase">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor"
+                stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round"
+                    d="M7 7h.01M7 3h5c.512 0 1.024.195 1.414.586l7 7a2 2 0 010 2.828l-7 7a2 2 0 01-2.828 0l-7-7A1.994 1.994 0 013 12V7a4 4 0 014-4z" />
+            </svg>
+            {{ tags }}
+            <a href="{{url}}" class="bg-gray-400 hover:bg-brand-blue text-white px-2 py-px">{{ title }}</a>
+            {{ /tags }}
+        </div>
+    </aside>
+    <aside class="h-max flex flex-row justify-between relative mt-8 mb-16 pb-16">
+        {{ collection:previous in="blog" as="posts" limit="1" sort="date:asc" }}
+        
+        {{ posts }}
+            <a href="{{ url }}" class="absolute left-0 flex flex-col hover:text-brand-blue transition duration-150">
+                <h3 class="uppercase text-sm leading-loose font-semibold">Previous post</h3>
+                <p class="post">
+                    {{ title }}
+                </p>
+            </a>
+        {{ /posts }}
+        
+        {{ /collection:previous }}
+
+        {{ collection:next in="blog" as="posts" limit="1" sort="date:asc" }}
+        
+        {{ posts }}
+            <a href="{{ url }}" class="absolute right-0 flex flex-col text-end hover:text-brand-blue transition duration-150">
+                <h3 class="uppercase text-sm leading-loose font-semibold">Next post</h3>
+                <p class="post">
+                    {{ title }}
+                </p>
+            </a>
+        {{ /posts }}
+        
+        {{ /collection:next }}
+
+
+        
+    </aside>
+    
 </div>

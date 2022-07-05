@@ -1,12 +1,13 @@
 title: Blog
-template: blog/index
-layout: blog/index
+template: blog/show
+layout: layout
 taxonomies:
   - categories
   - tags
 revisions: false
+route: '/{slug}'
 date: true
-sort_dir: asc
+sort_dir: desc
 date_behavior:
   past: public
   future: private

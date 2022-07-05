@@ -11,6 +11,23 @@ sections:
           validate:
             - required
       -
+        handle: featured_image
+        field:
+          mode: list
+          container: assets
+          restrict: false
+          allow_uploads: true
+          show_filename: true
+          max_files: 1
+          display: 'Featured Image'
+          type: assets
+          icon: assets
+          listable: hidden
+          instructions_position: above
+          read_only: false
+          validate:
+            - required
+      -
         handle: content
         field:
           always_show_set_button: false
@@ -53,22 +70,14 @@ sections:
           instructions_position: above
           read_only: false
       -
-        handle: author
-        field:
-          type: users
-          display: Author
-          default: current
-          localizable: true
-          max_items: 1
-      -
-        handle: related_articles
+        handle: related_posts
         field:
           max_items: 3
           mode: default
           create: true
           collections:
             - blog
-          display: 'Related Articles'
+          display: 'Related Posts'
           type: entries
           icon: entries
           listable: hidden
@@ -82,6 +91,14 @@ sections:
         field:
           type: slug
           localizable: true
+      -
+        handle: author
+        field:
+          type: users
+          display: Author
+          default: current
+          localizable: true
+          max_items: 1
       -
         handle: date
         field:
@@ -105,3 +122,14 @@ sections:
             - tags
           display: Tags
           mode: select
+      -
+        handle: excerpt
+        field:
+          character_limit: '300'
+          antlers: false
+          display: Excerpt
+          type: textarea
+          icon: textarea
+          listable: hidden
+          instructions_position: above
+          read_only: false

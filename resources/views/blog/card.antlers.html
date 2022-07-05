@@ -1,13 +1,13 @@
-<a href="{{ url }}" class="w-full h-max border-gray-400 shadow hover:shadow-lg transition rounded">
-    {{ if ! hide_image }}<img src="{{ featured_image }}" alt="{{ featured_image:alt}}" class="rounded-t">{{ /if }}
-    <article class="p-4">
-        <div class="flex items-center">
-            <img src="{{ author:avatar}}" alt="" class="h-12 w-12 rounded-full">
-            <div class="leading-tight ml-3">
-                <p class="font-bold">{{author:name}}</p>
-                <p class="text-sm text-gray-600">{{ date }}</p>
-            </div>
-        </div>
-        <h2 class="text-2xl font-bold leading-tight mt-4">{{ title }}</h2>
+<a href="{{ url }}" class="w-full h-max {{ ! hide_border ? 'border-b-2 border-gray-200 py-8' : 'pt-8' }}">
+    <img src="{{ featured_image }}" alt="{{ featured_image:alt}}" class="shadow hover:shadow-lg transition rounded">
+    <article class="py-4">
+        <h2 class="{{ hide_border ? 'text-xl' : 'text-4xl' }} font-bold leading-6 my-4">{{ title }}</h2>
+        <p class="text-sm text-gray-600"> {{ date }}</p>
+        {{ if excerpt && ! hide_excerpt }}
+            <p class="text-lg">
+                {{excerpt}}
+                <span>...Read more</span>
+            </p>
+        {{ /if }}
     </article>
 </a>
