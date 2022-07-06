@@ -11,8 +11,6 @@ sections:
           listable: hidden
           instructions_position: above
           read_only: false
-          validate:
-            - required
       -
         handle: github
         field:
@@ -22,8 +20,6 @@ sections:
           listable: hidden
           instructions_position: above
           read_only: false
-          validate:
-            - required
       -
         handle: behance
         field:
@@ -33,8 +29,6 @@ sections:
           listable: hidden
           instructions_position: above
           read_only: false
-          validate:
-            - required
       -
         handle: youtube
         field:
@@ -44,5 +38,3 @@ sections:
           listable: hidden
           instructions_position: above
           read_only: false
-          validate:
-            - required

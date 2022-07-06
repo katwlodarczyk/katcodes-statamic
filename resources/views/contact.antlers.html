@@ -1,2 +1,27 @@
-hello
-{{ form:contact_me }}
+{{dump}}
+{{ current_template }}
+{{ form:create in="contact_me" }}
+
+{{ if errors }}
+<div class="bg-red-300 text-white p-2">
+    {{ errors }}
+    {{ value }}<br>
+    {{ /errors }}
+</div>
+{{ /if }}
+
+{{ if success }}
+<div class="bg-green-300 text-white p-2">
+    {{ success }}
+</div>
+{{ /if }}
+
+<label>Email</label>
+<input type="text" name="email" value="{{ old:email }}" />
+
+<label>Message</label>
+<textarea name="message" rows="5">{{ old:message }}</textarea>
+
+<button>Submit</button>
+
+{{ /form:create }}
