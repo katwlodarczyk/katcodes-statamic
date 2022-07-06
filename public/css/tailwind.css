@@ -1000,6 +1000,18 @@ video {
   margin-bottom: 4rem;
 }
 
+.mt-36 {
+  margin-top: 9rem;
+}
+
+.mt-44 {
+  margin-top: 11rem;
+}
+
+.mb-12 {
+  margin-bottom: 3rem;
+}
+
 .block {
   display: block;
 }
@@ -1030,6 +1042,10 @@ video {
   height: max-content;
 }
 
+.h-1\/2 {
+  height: 50%;
+}
+
 .w-screen {
   width: 100vw;
 }
@@ -1050,6 +1066,10 @@ video {
 
 .w-3\/4 {
   width: 75%;
+}
+
+.w-1\/2 {
+  width: 50%;
 }
 
 .max-w-7xl {
@@ -1078,6 +1098,10 @@ video {
 
 .flex-1 {
   flex: 1 1 0%;
+}
+
+.transform {
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
 
 .grid-flow-row {
