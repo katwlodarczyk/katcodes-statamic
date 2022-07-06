@@ -20,6 +20,7 @@
         "vue-template-compiler": "^2.6.12"
     },
     "dependencies": {
+        "@alpinejs/collapse": "^3.10.2",
         "alpinejs": "^3.10.2"
     }
 }

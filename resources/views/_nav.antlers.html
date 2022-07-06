@@ -16,13 +16,39 @@
             </svg>
         </button>
     </div>
-    <div class="flex items-center justify-between mx-auto max-w-5xl transition-all duration-150" @click.outside="showMobileNav = false" x-show="showMobileNav" x-transition.scale.origin.top.right>
-        <div class="text-sm tracking-wide block md:flex flex-1 justify-end md:justify-center md:items-center md:space-x-8 px-6 md:pl-0">
-            <ul class="flex flex-col md:flex-row items-end md:items-center md:space-x-8 font-semibold">
+    {{# Mobile Nav #}}
+    <div class="mobile-nav lg:hidden flex items-center justify-between mx-auto max-w-5xl transition-all duration-150" @click.outside="showMobileNav = false" x-show="showMobileNav" x-collapse.duration.500ms>
+        <div class="text-sm tracking-wide block lg:flex flex-1 justify-end lg:justify-center lg:items-center lg:space-x-8 px-6 lg:pl-0">
+            <ul class="flex flex-col lg:flex-row items-end lg:items-center lg:space-x-8 font-semibold">
                 <li><a href="{{ homepage }}" class="py-4 block uppercase text-gray-400 hover:text-gray-50 {{ is_homepage ?= 'text-white' }}">
                     home</a></li>
                 {{ taxonomy:categories }}
                     <li><a href="/categories/{{ slug }}" class="py-4 block uppercase text-gray-400 hover:text-gray-50 {{ segment_2 === slug ?= 'text-white' }}">{{ title }}</a></li>
+                {{/taxonomy:categories}}
+            </ul>
+            <ul class="flex flex-col lg:flex-row items-end lg:items-center space-x-8 font-semibold">
+                {{ nav:collection:pages include_home="false" }}
+                <li><a href="{{ url }}"
+                        class="py-4 block uppercase text-gray-400 hover:text-gray-50 {{ is_current || is_parent ?= 'text-white' }}">{{
+                        title
+                        }}</a></li>
+                {{ /nav:collection:pages }}
+            </ul>
+        </div>
+    </div>
+
+    {{# Desktop Nav #}}
+    <div class="desktop-nav hidden lg:flex items-center justify-between mx-auto max-w-5xl">
+        <div
+            class="text-sm tracking-wide block md:flex flex-1 justify-end md:justify-center md:items-center md:space-x-8 px-6 md:pl-0">
+            <ul class="flex flex-col md:flex-row items-end md:items-center md:space-x-8 font-semibold">
+                <li><a href="{{ homepage }}"
+                        class="py-4 block uppercase text-gray-400 hover:text-gray-50 {{ is_homepage ?= 'text-white' }}">
+                        home</a></li>
+                {{ taxonomy:categories }}
+                <li><a href="/categories/{{ slug }}"
+                        class="py-4 block uppercase text-gray-400 hover:text-gray-50 {{ segment_2 === slug ?= 'text-white' }}">{{
+                        title }}</a></li>
                 {{/taxonomy:categories}}
             </ul>
             <ul class="flex flex-col md:flex-row items-end md:items-center space-x-8 font-semibold">
