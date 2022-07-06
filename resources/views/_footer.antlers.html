@@ -1,5 +1,5 @@
-<footer class="bg-gray-900 text-gray-400 w-screen pt-16 pb-12 mt-24 mx-auto space-y-6">
-    <div class="w-full grid grid-cols-3 mx-auto max-w-7xl">
+<footer class="bg-gray-900 text-gray-400 w-screen pt-16 pb-6 md:pb-12 md:mt-24 mx-auto space-y-6">
+    <div class="w-full grid grid-cols-1 md:grid-cols-3 mx-auto px-4 lg:max-w-7xl gap-y-6">
         <div>
             <h3 class="uppercase text-xl font-semibold text-white">
                 Categories:
@@ -10,7 +10,7 @@
                 {{/taxonomy:categories}}
             </ul>
         </div>
-        <div class="flex flex-col justify-self-center">
+        <div class="flex flex-col md:justify-self-center">
             <h3 class="uppercase text-xl font-semibold text-white pl-2 pb-3">Tags:</h3>
             <ul class="flex flex-row flex-wrap gap-x-2 items-start font-semibold">
                 {{ taxonomy:tags }}
@@ -18,14 +18,14 @@
                 {{/taxonomy:tags}}
             </ul>
         </div>
-        <div class="flex flex-col justify-self-end w-3/4">
+        <div class="flex flex-col md:justify-self-end w-full md:w-3/4">
             <form action="/search" class="w-full">
                 <input type="search" name="q" placeholder="Search" autofocus
                     class="w-full outline-none px-2 h-8 rounded-none placeholder-gray-900 text-gray-900 font-semibold">
             </form>
         </div>
     </div>
-    <div class="flex flex-row justify-between mx-auto max-w-7xl border-t-2 border-gray-400 opacity-80 pt-8 text-sm">
+    <div class="flex flex-row justify-between mx-auto px-4 lg:max-w-7xl border-t-2 border-gray-400 opacity-80 pt-8 text-sm">
         <p class="">© {{ now|format:Y }} KAT CODES</p>
         <a href="https://katwlodarczyk.com" target="_blank" class="hover:text-brand-blue">Made by Kat Wlodarczyk</a>
     </div>

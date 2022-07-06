@@ -1,14 +1,31 @@
 <nav class="bg-gray-900 text-white w-screen py-4 mx-auto">
-    <div class="flex items-center justify-between mx-auto max-w-5xl">
-        <div class="text-sm tracking-wide flex flex-1 justify-center items-center space-x-8">
-            <ul class="flex items-center space-x-8 font-semibold">
+    <div class="flex justify-end lg:hidden">
+        <button class="flex items-center px-6 text-gray-200" x-bind:class="{'hidden': showMobileNav}"
+            @click="showMobileNav = true">
+            <svg class="fill-current h-5 w-5" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                <title>Open Menu</title>
+                <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z" />
+            </svg>
+        </button>
+        <button class="items-center px-6 text-gray-200" x-bind:class="{'flex': showMobileNav, 'hidden': ! showMobileNav}"
+            @click="showMobileNav = false" x-cloak>
+            <svg class="fill-current h-5 w-5" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                <title>Close Menu</title>
+                <path
+                    d="M10 8.586L2.929 1.515 1.515 2.929 8.586 10l-7.071 7.071 1.414 1.414L10 11.414l7.071 7.071 1.414-1.414L11.414 10l7.071-7.071-1.414-1.414L10 8.586z" />
+            </svg>
+        </button>
+    </div>
+    <div class="flex items-center justify-between mx-auto max-w-5xl transition-all duration-150" @click.outside="showMobileNav = false" x-show="showMobileNav" x-transition.scale.origin.top.right>
+        <div class="text-sm tracking-wide block md:flex flex-1 justify-end md:justify-center md:items-center md:space-x-8 px-6 md:pl-0">
+            <ul class="flex flex-col md:flex-row items-end md:items-center md:space-x-8 font-semibold">
                 <li><a href="{{ homepage }}" class="py-4 block uppercase text-gray-400 hover:text-gray-50 {{ is_homepage ?= 'text-white' }}">
                     home</a></li>
                 {{ taxonomy:categories }}
                     <li><a href="/categories/{{ slug }}" class="py-4 block uppercase text-gray-400 hover:text-gray-50 {{ segment_2 === slug ?= 'text-white' }}">{{ title }}</a></li>
                 {{/taxonomy:categories}}
             </ul>
-            <ul class="flex items-center space-x-8 font-semibold">
+            <ul class="flex flex-col md:flex-row items-end md:items-center space-x-8 font-semibold">
                 {{ nav:collection:pages include_home="false" }}
                 <li><a href="{{ url }}"
                         class="py-4 block uppercase text-gray-400 hover:text-gray-50 {{ is_current || is_parent ?= 'text-white' }}">{{
