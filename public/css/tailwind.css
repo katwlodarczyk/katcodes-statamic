@@ -1495,6 +1495,11 @@ video {
   color: rgb(75 85 99 / var(--tw-text-opacity));
 }
 
+.text-gray-300 {
+  --tw-text-opacity: 1;
+  color: rgb(209 213 219 / var(--tw-text-opacity));
+}
+
 .placeholder-black::-moz-placeholder {
   --tw-placeholder-opacity: 1;
   color: rgb(0 0 0 / var(--tw-placeholder-opacity));
@@ -1503,6 +1508,28 @@ video {
 .placeholder-black::placeholder {
   --tw-placeholder-opacity: 1;
   color: rgb(0 0 0 / var(--tw-placeholder-opacity));
+}
+
+.placeholder-gray-900::-moz-placeholder {
+  --tw-placeholder-opacity: 1;
+  color: rgb(17 24 39 / var(--tw-placeholder-opacity));
+}
+
+.placeholder-gray-900::placeholder {
+  --tw-placeholder-opacity: 1;
+  color: rgb(17 24 39 / var(--tw-placeholder-opacity));
+}
+
+.opacity-40 {
+  opacity: 0.4;
+}
+
+.opacity-70 {
+  opacity: 0.7;
+}
+
+.opacity-80 {
+  opacity: 0.8;
 }
 
 .shadow-lg {

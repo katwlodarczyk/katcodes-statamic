@@ -39,6 +39,12 @@ return [
 
     'widgets' => [
         'getting_started',
+        [
+            'type' => 'form',
+            'form' => 'contact_me',
+            'fields' => ['name', 'email'],
+            'limit' => 10,
+        ],
     ],
 
     /*

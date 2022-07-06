@@ -2,10 +2,10 @@
     <div class="flex items-center justify-between mx-auto max-w-5xl">
         <div class="text-sm tracking-wide flex flex-1 justify-center items-center space-x-8">
             <ul class="flex items-center space-x-8 font-semibold">
-                <li><a href="{{ homepage }}" class="py-4 block uppercase text-gray-400 hover:text-gray-50 {{ is_current || is_parent ?= 'text-white' }}">
+                <li><a href="{{ homepage }}" class="py-4 block uppercase text-gray-400 hover:text-gray-50 {{ is_homepage ?= 'text-white' }}">
                     home</a></li>
                 {{ taxonomy:categories }}
-                    <li><a href="/categories/{{ slug }}" class="py-4 block uppercase text-gray-400 hover:text-gray-50 {{ is_current || is_parent ?= 'text-white' }}">{{ title }}</a></li>
+                    <li><a href="/categories/{{ slug }}" class="py-4 block uppercase text-gray-400 hover:text-gray-50 {{ segment_2 === slug ?= 'text-white' }}">{{ title }}</a></li>
                 {{/taxonomy:categories}}
             </ul>
             <ul class="flex items-center space-x-8 font-semibold">

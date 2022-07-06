@@ -6,7 +6,7 @@
             </h3>
             <ul class="flex flex-col items-start font-semibold">
                 {{ taxonomy:categories }}
-                    <li><a href="/categories/{{ slug }}" class="text-base py-4 block uppercase text-gray-400 hover:text-gray-50 {{ is_current || is_parent ?= 'text-white' }}">{{title }} ({{ entries_count }})</a></li>
+                    <li><a href="/categories/{{ slug }}" class="text-base py-4 block uppercase text-gray-400 hover:text-gray-50 {{ segment_1 === 'categories' && segment_2 === slug ?= 'text-white' }}">{{title }} ({{ entries_count }})</a></li>
                 {{/taxonomy:categories}}
             </ul>
         </div>
@@ -14,18 +14,18 @@
             <h3 class="uppercase text-xl font-semibold text-white pl-2 pb-3">Tags:</h3>
             <ul class="flex flex-row flex-wrap gap-x-2 items-start font-semibold">
                 {{ taxonomy:tags }}
-                    <li><a href="/tags/{{ slug }}" class="text-sm p-2 block uppercase text-gray-400 hover:text-gray-50 hover:bg-brand-blue hover:rounded transition duration-150 {{ is_current || is_parent ?= 'text-white' }}">{{title}}</a></li>
+                    <li><a href="/tags/{{ slug }}" class="text-sm p-2 block uppercase text-gray-400 hover:text-gray-50 hover:bg-brand-blue hover:rounded transition duration-150 {{ segment_1 === 'tag' && segment_2 === slug ?= 'text-white bg-brand-blue rounded' }}">{{title}}</a></li>
                 {{/taxonomy:tags}}
             </ul>
         </div>
         <div class="flex flex-col justify-self-end w-3/4">
             <form action="/search" class="w-full">
-                <input type="search" name="q" placeholder="Search" value="{{ get:q }}" autofocus
-                    class="w-full border-2 border-black outline-none px-2 h-8 rounded-none placeholder-black font-bold">
+                <input type="search" name="q" placeholder="Search" autofocus
+                    class="w-full outline-none px-2 h-8 rounded-none placeholder-gray-900 text-gray-900 font-semibold">
             </form>
         </div>
     </div>
-    <div class="flex flex-row justify-between mx-auto max-w-7xl border-t-2 border-gray-400 pt-8 text-sm">
+    <div class="flex flex-row justify-between mx-auto max-w-7xl border-t-2 border-gray-400 opacity-80 pt-8 text-sm">
         <p class="">© {{ now|format:Y }} KAT CODES</p>
         <a href="https://katwlodarczyk.com" target="_blank" class="hover:text-brand-blue">Made by Kat Wlodarczyk</a>
     </div>
