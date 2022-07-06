@@ -6,6 +6,8 @@ preferences:
   taxonomies:
     categories:
       after_save: create_another
+    tags:
+      after_save: create_another
   collections:
     categories:
       after_save: create_another

@@ -5,7 +5,7 @@
                 <li><a href="{{ homepage }}" class="text-base py-4 block uppercase text-gray-400 hover:text-gray-50 {{ is_current || is_parent ?= 'text-white' }}">
                     home</a></li>
                 {{ taxonomy:categories }}
-                    <li><a href="{{ url }}" class="text-base py-4 block uppercase text-gray-400 hover:text-gray-50 {{ is_current || is_parent ?= 'text-white' }}">{{ title }}</a></li>
+                    <li><a href="/categories/{{ slug }}" class="text-base py-4 block uppercase text-gray-400 hover:text-gray-50 {{ is_current || is_parent ?= 'text-white' }}">{{ title }}</a></li>
                 {{/taxonomy:categories}}
             </ul>
             <ul class="flex items-center space-x-8 font-semibold">

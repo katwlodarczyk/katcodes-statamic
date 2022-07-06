@@ -1,6 +1,10 @@
 <div class="max-w-4xl mx-auto">
-    <h1 class="text-8xl font-black mb-16">Tags</h1>
+    <h1 class="text-8xl font-black mt-24 mb-16">Tags</h1>
     {{ tags }}
-    <h2 class="mt-4"><a href={{ url }} class="text-4xl font-black text-red-700 hover:underline hover:underline-offset-8">{{ title }}</a></h2>
+        <h2 class="mt-4">
+            <a href={{ url }} class="text-4xl font-black text-gray-900 hover:text-brand-blue transition duration-150">
+                {{ title }}
+            </a>
+        </h2>
     {{ /tags }}
 </div>

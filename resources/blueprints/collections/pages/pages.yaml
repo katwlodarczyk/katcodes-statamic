@@ -1,0 +1,63 @@
+sections:
+  main:
+    display: Main
+    fields:
+      -
+        handle: template_field
+        field:
+          hide_partials: true
+          display: 'Template Field'
+          type: template
+          icon: template
+          listable: hidden
+          instructions_position: above
+          read_only: false
+      -
+        handle: title
+        field:
+          type: text
+          required: true
+          validate:
+            - required
+      -
+        handle: content
+        field:
+          type: markdown
+          localizable: true
+      -
+        handle: form_field
+        field:
+          max_items: 1
+          display: 'Form Field'
+          type: form
+          icon: form
+          listable: hidden
+          instructions_position: above
+          read_only: false
+      -
+        handle: button_group_field
+        field:
+          display: 'Button Group Field'
+          type: button_group
+          icon: button_group
+          listable: hidden
+          instructions_position: above
+          read_only: false
+  sidebar:
+    display: Sidebar
+    fields:
+      -
+        handle: slug
+        field:
+          type: slug
+          localizable: true
+      -
+        handle: parent
+        field:
+          type: entries
+          collections:
+            - pages
+          max_items: 1
+          listable: false
+          localizable: true
+title: Pages

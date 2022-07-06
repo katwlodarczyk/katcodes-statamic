@@ -1,10 +1,16 @@
-<div class="max-w-4xl mx-auto mt-12">
-    <h1 class="text-8xl font-black text-center">{{ title}}</h1>
-    {{ entries paginate="1" as="posts"}}
-    <div class="grid grid-flow-col gird-cols-2 gap-8 my-16">
-        {{ posts }}
-        {{ partial:blog/card }}
-        {{ /posts }}
-    </div>
+<div class="max-w-4xl mx-auto mt-24">
+    <h1 class="w-max mx-auto text-2xl uppercase tracking-wide text-gray-500 text-center pb-2 border-b-2 border-gray-200">
+        Tag: {{ title}}
+    </h1>
+    {{ entries paginate="8" }}
+        {{ if results }}
+            <div class="my-16">
+                {{ results }}
+                    {{ partial:blog/card }}
+                {{ /results }}
+            </div>
+        {{ else }}
+            <h2 class="text-center text-2xl pt-4">Sorry, no posts with this tag.</h2>
+        {{ /if }}
     {{ /entries }}
 </div>
