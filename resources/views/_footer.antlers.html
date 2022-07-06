@@ -11,7 +11,7 @@
             </ul>
         </div>
         <div class="flex flex-col justify-self-center">
-            <h3 class="uppercase text-xl font-semibold text-white pb-3">Tags:</h3>
+            <h3 class="uppercase text-xl font-semibold text-white pl-2 pb-3">Tags:</h3>
             <ul class="flex flex-row flex-wrap gap-x-2 items-start font-semibold">
                 {{ taxonomy:tags }}
                     <li><a href="/tags/{{ slug }}" class="text-sm p-2 block uppercase text-gray-400 hover:text-gray-50 hover:bg-brand-blue hover:rounded transition duration-150 {{ is_current || is_parent ?= 'text-white' }}">{{title}}</a></li>
