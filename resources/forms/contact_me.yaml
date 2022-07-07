@@ -1,4 +1,26 @@
-title: 'Contact me'
+title: "Contact me"
 email:
-  -
-    to: katcodes@gmail.com
+  - to: itskatcodes@gmail.com
+    from: itskatcodes@gmail.com
+    subject: You've got a new message on katcodes.blog!
+fields:
+  - handle: name
+    field:
+      display: Name
+      type: text
+      validate: required
+  - handle: email
+    field:
+      display: Email
+      type: email
+      validate: required|email
+  - handle: subject
+    field:
+      display: Subject
+      type: text
+      validate: required
+  - handle: message
+    field:
+      display: Message
+      type: textarea
+      validate: required

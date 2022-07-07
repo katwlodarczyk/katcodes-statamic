@@ -1,7 +1,7 @@
-<a href="{{ url }}" class="w-full h-full flex flex-col justify-between {{ ! hide_border ? 'border-b-2 border-gray-200 py-8' : 'pt-8' }}">
-    <img src="{{ featured_image }}" alt="{{ featured_image:alt}}" class="shadow-lg hover:shadow-2xl transition duration-150 rounded">
+<a href="{{ url }}" class="group w-full h-full flex flex-col justify-between {{ ! hide_border ? 'border-b-2 border-gray-200 py-8' : 'pt-8' }}">
+    <img src="{{ featured_image }}" alt="{{ featured_image:alt}}" class="shadow-lg group-hover:shadow-xl transition duration-150 rounded">
     <article class="py-4">
-        <h2 class="{{ hide_border ? 'text-lg' : 'text-4xl' }} hover:text-brand-blue transition duration-150 font-bold leading-6 my-4">{{ title }}</h2>
+        <h2 class="{{ hide_border ? 'text-lg' : 'text-4xl' }} group-hover:text-brand-blue transition duration-150 font-bold leading-6 my-4">{{ title }}</h2>
         <p class="text-sm text-gray-600"> {{ date }}</p>
         {{ if excerpt && ! hide_excerpt }}
             <p class="text-lg mt-4">
