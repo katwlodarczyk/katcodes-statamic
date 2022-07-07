@@ -21,3 +21,10 @@ preferences:
         - date
         - categories
         - tags
+  forms:
+    contact_me:
+      columns:
+        - datestamp
+        - name
+        - subject
+        - email
