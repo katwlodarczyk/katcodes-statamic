@@ -11,7 +11,6 @@ sections:
           icon: template
           listable: hidden
           instructions_position: above
-          read_only: false
       -
         handle: title
         field:
@@ -33,16 +32,6 @@ sections:
           icon: form
           listable: hidden
           instructions_position: above
-          read_only: false
-      -
-        handle: button_group_field
-        field:
-          display: 'Button Group Field'
-          type: button_group
-          icon: button_group
-          listable: hidden
-          instructions_position: above
-          read_only: false
   sidebar:
     display: Sidebar
     fields:

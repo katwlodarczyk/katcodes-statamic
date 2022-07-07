@@ -71,8 +71,32 @@
                     <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
                 </div>
                 <div>
-                 
+                    {{# {{ collection:blog as="entries" }}
+                        {{ entries group_by="date|F Y" }}
+                            {{ groups }}
+                            
+                            <h3>{{group}}</h3>
+                            <ul>
+                                
+                            
+                                <li>
+                                    <a href="/archive/{{ date format="Y" }}/{{ date format="m" }}">{{ group }} ({{group:items}})</a>
+                                </li>
+                            
+                               
+                            </ul>
+                            
+                           
+                            
+                            {{ /groups }}
+                        {{ /entries }}
+                    {{ /collection:blog }} #}}
                 </div>
+                {{# <ul>
+                    {{ blog-helpers-archive:dates collection_name="blog" }}
+                        <li><a href="/archive/{{value}}"> {{ nice }}</a></li>
+                    {{ /blog-helpers-archive:dates }}
+                </ul> #}}
             </div>
         </div>
         {{ partial:footer }}

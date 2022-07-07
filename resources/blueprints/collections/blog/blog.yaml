@@ -24,7 +24,6 @@ sections:
           icon: assets
           listable: hidden
           instructions_position: above
-          read_only: false
           validate:
             - required
       -
@@ -68,7 +67,6 @@ sections:
           icon: bard
           listable: hidden
           instructions_position: above
-          read_only: false
       -
         handle: related_posts
         field:
@@ -82,7 +80,6 @@ sections:
           icon: entries
           listable: hidden
           instructions_position: above
-          read_only: false
   sidebar:
     display: Sidebar
     fields:
@@ -132,4 +129,3 @@ sections:
           icon: textarea
           listable: hidden
           instructions_position: above
-          read_only: false
